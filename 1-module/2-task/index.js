@@ -12,7 +12,7 @@ function print(text) {
 function isValid(name) {
   let res;
 
-  return res = !!(name && name.length > 3 && name.indexOf(' ') == -1);
+  return res = !!(name && typeof name === 'string' && name.length > 3 && name.indexOf(' ') === -1);
 }
 
 function sayHello() {
