@@ -4,5 +4,14 @@
  * @returns {boolean}
  */
 function checkSpam(str) {
-  // ваш код...
+  let suspiciousStrings = ['1xBet', 'XXX', 'казино азино'];
+  suspiciousStrings = suspiciousStrings.map(el => el.toLowerCase());
+  str = str.toLowerCase();
+  for (let i = 0; i < suspiciousStrings.length; i++) {
+    if (!str.match(suspiciousStrings[i])) {
+    } else {
+      return true;
+    }
+  }
+  return false;
 }
