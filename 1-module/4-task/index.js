@@ -9,9 +9,7 @@ function checkSpam(str) {
   str = str.toLowerCase();
   for (let i = 0; i < suspiciousStrings.length; i++) {
     if (!str.match(suspiciousStrings[i])) {
-      console.log('innocent rabbit');
     } else {
-      console.log('spam');
       return true;
     }
   }
