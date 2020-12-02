@@ -4,5 +4,9 @@
  * @returns {{min:number, max:number}}  объект
  */
 function getMinMax(str) {
-  // ваш код...
+  let nums = str.match(/-?\d+\.?\d+/g).filter(el => parseInt(el));
+  return {
+    min: Math.min(...nums),
+    max: Math.max(...nums),
+  };
 }
