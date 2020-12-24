@@ -7,8 +7,9 @@ export default class ProductCard {
   }
 
   render () {
+    let _self = this;
     let addToCart = function (e) {
-      let addByClick = new CustomEvent("product-add", {detail: this.data.id, bubbles: true});
+      let addByClick = new CustomEvent("product-add", {detail: _self.data.id, bubbles: true});
       e.currentTarget.dispatchEvent(addByClick);
     };
     this.elem = document.createElement('div');
@@ -19,12 +20,11 @@ export default class ProductCard {
     </div>
     <div class="card__body">
       <div class="card__title">${this.data.name}</div>
-      <button onclick="addToCart()" type="button" class="card__button">
+      <button type="button" class="card__button">
         <img src="../../assets/images/icons/plus-icon.svg" alt="icon">
       </button>
     </div>`;
     this.elem.insertAdjacentHTML('beforeend', template);
-
-
+    this.elem.querySelector('button').addEventListener('click', addToCart);
   }
 }
