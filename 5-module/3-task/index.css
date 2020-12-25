@@ -110,6 +110,7 @@
 
 .carousel__img {
   min-width: 100%;
+  width: 100%;
   display: block;
   position: absolute;
   top: 50%;
